@@ -83,7 +83,7 @@ export function MUI_PCS() {
       </RowBox>
       <Divider sx={{ m: 2 }} />
       <Typography variant="h4">
-        Passing empty <code>props</code> changes the font (maybe it's because
+        Passing empty <code>props</code> changes color (maybe it's caused by{" "}
         <code>useTheme</code>?)
       </Typography>
       <RowBox>

@@ -1,7 +1,3 @@
-// import React from 'react';
-// import logo from './logo.svg';
-// import './App.css';
-
 import {
   createTheme,
   ThemeProvider,
@@ -10,11 +6,14 @@ import {
   ButtonGroup,
   Button,
   Typography,
+  IconButton,
+  Box,
 } from "@mui/material";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import { orange, yellow } from "@mui/material/colors";
 import { MUI_PCS } from "./MUI501-props-changes-style/MUI_PCS";
+import { GitHub } from "@mui/icons-material";
 
 function App() {
   const theme = createTheme({
@@ -36,15 +35,33 @@ function App() {
     color: theme.palette.text.primary,
   });
 
+  const Header = styled(Box)({
+    width: "100%",
+    display: "flex",
+    justifyContent: "space-around",
+  });
+
   return (
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <AppWarp>
           <BrowserRouter>
-            MUI:
-            <ButtonGroup>
-              <Button href="/MUI_PCS">props changes style</Button>
-            </ButtonGroup>
+            <Header>
+              <Box>
+                MUI:
+                <ButtonGroup>
+                  <Button href="/MUI_PCS">props changes style</Button>
+                </ButtonGroup>
+              </Box>
+              <Box>
+                Source code:
+                <ButtonGroup>
+                  <IconButton href="https://github.com/Pablion/pablion-questions/blob/master/src/MUI501-props-changes-style/MUI_PCS.tsx">
+                    <GitHub fontSize="medium" />
+                  </IconButton>
+                </ButtonGroup>
+              </Box>
+            </Header>
             <Switch>
               <Route exact path="/">
                 <Typography variant="h2">

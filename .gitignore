@@ -9,7 +9,8 @@
 /coverage
 
 # production
-/build
+# Next line: Need to git page
+# /build
 
 # misc
 .DS_Store
