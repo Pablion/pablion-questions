@@ -1,8 +1,8 @@
 {
   "name": "pablion-questions",
   "version": "0.1.0",
-  "homepage": ".",
   "private": true,
+  "homepage": "https://pablion.github.io/pablion-questions/",
   "dependencies": {
     "@emotion/react": "^11.4.1",
     "@emotion/styled": "^11.3.0",
