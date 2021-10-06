@@ -1,25 +1,33 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+// import React from 'react';
+// import logo from './logo.svg';
+// import './App.css';
+
+import {
+  createTheme,
+  ThemeProvider,
+  StyledEngineProvider,
+} from "@mui/material";
+
+import { orange, yellow } from "@mui/material/colors";
+import { MUI_PPCS } from "./MUI501-passing-props-changes-style/MUI_PPCS";
 
 function App() {
+  const theme = createTheme({
+    palette: {
+      mode: "dark",
+      primary: { main: yellow["A700"] },
+      secondary: { main: orange["A700"] },
+    },
+  });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledEngineProvider injectFirst>
+      <ThemeProvider theme={theme}>
+        <div className="App">
+          <MUI_PPCS />
+        </div>
+      </ThemeProvider>
+    </StyledEngineProvider>
   );
 }
 
