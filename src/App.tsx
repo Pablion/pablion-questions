@@ -4,10 +4,11 @@ import {
   StyledEngineProvider,
   styled,
   ButtonGroup,
-  Button,
+  Button as MUIButton,
   Typography,
   IconButton,
   Box,
+  ButtonProps,
 } from "@mui/material";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 
@@ -23,6 +24,14 @@ function App() {
       secondary: { main: orange["A700"] },
     },
   });
+
+  function Button({ href, ...props }: ButtonProps) {
+    return href ? (
+      <MUIButton href={"/pablion-questions" + href} {...props}></MUIButton>
+    ) : (
+      <MUIButton {...props}></MUIButton>
+    );
+  }
 
   const AppWarp = styled("div")({
     backgroundColor: "#080808",
@@ -45,7 +54,7 @@ function App() {
     <StyledEngineProvider injectFirst>
       <ThemeProvider theme={theme}>
         <AppWarp>
-          <BrowserRouter>
+          <BrowserRouter basename="/pablion-questions">
             <Header>
               <Box>
                 MUI:

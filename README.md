@@ -9,7 +9,7 @@ A repo bootstrapped with [Create React App](https://github.com/facebook/create-r
 
 ### shortcuts
 
-- MUI: Props of elements in ButtonGroup is changing style: http://localhost:7357/MUI_PCS
+- MUI: Props of elements in ButtonGroup is changing style: https://pablion.github.io/pablion-questions/MUI_PCS
 
 ### There's not test yet
 

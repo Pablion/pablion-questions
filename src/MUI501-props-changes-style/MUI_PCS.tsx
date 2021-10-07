@@ -10,6 +10,7 @@ import {
   styled,
   Paper,
   Divider,
+  Link,
 } from "@mui/material";
 import { Google } from "@mui/icons-material";
 import { useTheme } from "@emotion/react";
@@ -57,8 +58,13 @@ export function MUI_PCS() {
       I think it's unintentional
       <Divider sx={{ m: 2 }} />
       <Typography variant="h4">
-        Property <code>href</code> changes the right border of last element
+        Property <code>href</code> changes the right border of the element
       </Typography>
+      If <code>href</code> defined, an a element will be used as the root node.
+      See <Link href="https://mui.com/api/button/#props">official doc</Link>.{" "}
+      Wrapping element will change to <code>{"<a />"}</code>. I think{" "}
+      <code>{"<a />"}</code> and <code>{"<div />"}</code> should have more
+      consistent behavior.
       <RowBox>
         <Paper>
           <ButtonGroup>
@@ -83,9 +89,10 @@ export function MUI_PCS() {
       </RowBox>
       <Divider sx={{ m: 2 }} />
       <Typography variant="h4">
-        Passing empty <code>props</code> changes color (maybe it's caused by{" "}
-        <code>useTheme</code>?)
+        Passing empty <code>props</code> changes color.
       </Typography>
+      <br />
+      All <code>IconButton</code> are wrapped with <code>{"<button />"}</code>
       <RowBox>
         <Paper>
           <ButtonGroup>
@@ -151,6 +158,18 @@ export function MUI_PCS() {
           Incoherent behavior but I like:
           <br /> The hover background of last <code>IconButton</code> will
           change.
+        </Paper>
+        <Paper>
+          <ButtonGroup size="large">
+            <IconButtonWithProps />
+            <IconButtonWithProps />
+            <Button>btn</Button>
+            <IconButtonWithProps />
+            <IconButtonWithProps />
+          </ButtonGroup>
+          <br />
+          Element <code>{"<Button />"}</code> with no <code>href</code>
+          <br /> Misbehavior: button missing right border.
         </Paper>
         <Paper>
           <ButtonGroup size="large">
